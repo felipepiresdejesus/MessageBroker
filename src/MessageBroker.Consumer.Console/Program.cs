@@ -1,15 +1,14 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
 using System.Text;
-
-namespace Lab.MessageBroker.Consumer
+using C = System.Console;
+namespace Lab.MessageBroker.Consumer.Console
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = "192.168.99.100" };
+            var factory = new ConnectionFactory() { HostName = "RABBIT_MQ_SERVER" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -20,19 +19,21 @@ namespace Lab.MessageBroker.Consumer
                                      arguments: null);
 
                 var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += (model, ea) =>
-                {
-                    var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(" [x] Received {0}", message);
-                };
+                consumer.Received += Consumer_Received;
                 channel.BasicConsume(queue: "hello",
                                      autoAck: true,
                                      consumer: consumer);
 
-                Console.WriteLine(" Press [enter] to exit.");
-                Console.ReadLine();
+                C.WriteLine("Press [enter] to exit.");
+                C.ReadLine();
             }
+        }
+
+        private static void Consumer_Received(object sender, BasicDeliverEventArgs e)
+        {
+            var body = e.Body;
+            var message = Encoding.UTF8.GetString(body);
+            C.WriteLine("[x] Received {0}", message);
         }
     }
 }

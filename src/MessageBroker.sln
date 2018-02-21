@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.MessageBroker.WebApi", "Lab.MessageBroker.WebApi\Lab.MessageBroker.WebApi.csproj", "{DCEE11B7-600C-41BC-A9AC-CEBD9CC4CF6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker.Publisher.WebApi", "MessageBroker.Publisher.WebApi\MessageBroker.Publisher.WebApi.csproj", "{DCEE11B7-600C-41BC-A9AC-CEBD9CC4CF6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.MessageBroker.Consumer", "Lab.MessageBroker.Consumer\Lab.MessageBroker.Consumer.csproj", "{03DD4C08-1620-46CB-8A75-18570F1F7093}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker.Consumer.Console", "MessageBroker.Consumer.Console\MessageBroker.Consumer.Console.csproj", "{03DD4C08-1620-46CB-8A75-18570F1F7093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

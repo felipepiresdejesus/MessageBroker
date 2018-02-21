@@ -3,7 +3,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using RabbitMQ.Client;
 
-namespace Lab.MessageBroker.WebApi.Controllers
+namespace MessageBroker.Publisher.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
@@ -12,7 +12,7 @@ namespace Lab.MessageBroker.WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get(string message)
         {
-            var factory = new ConnectionFactory() { HostName = "192.168.99.100" };
+            var factory = new ConnectionFactory() { HostName = "RABBIT_MQ_SERVER" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
