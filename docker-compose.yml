@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  lab.messagebroker.webapi:
+    image: lab.messagebroker.webapi
+    build:
+      context: .
+      dockerfile: Lab.MessageBroker.WebApi\Dockerfile
