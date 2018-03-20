@@ -6,7 +6,6 @@ services:
     networks:
       - messagebroker
   messagebroker.api:
-    image: messagebrokerapi
     build:
       context: .
       dockerfile: src/MessageBroker.Publisher.WebApi/Dockerfile
