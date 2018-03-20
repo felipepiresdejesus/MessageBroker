@@ -13,6 +13,15 @@ services:
       - messagebroker
     depends_on:
       - rabbitmq
+  messagebroker.console:
+    build:
+      context: .
+      dockerfile: src/MessageBroker.Consumer.Console/Dockerfile
+    networks:
+      - messagebroker
+    depends_on:
+      - rabbitmq
+
 networks:
   messagebroker:
     driver: bridge
