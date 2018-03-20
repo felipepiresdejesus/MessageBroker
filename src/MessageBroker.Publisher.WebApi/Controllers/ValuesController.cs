@@ -12,7 +12,7 @@ namespace MessageBroker.Publisher.WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get(string message)
         {
-            var factory = new ConnectionFactory() { HostName = "RABBIT_MQ_SERVER" };
+            var factory = new ConnectionFactory() { HostName = "rabbitmq" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {

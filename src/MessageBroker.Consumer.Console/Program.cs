@@ -8,7 +8,7 @@ namespace Lab.MessageBroker.Consumer.Console
     {
         static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = "RABBIT_MQ_SERVER" };
+            var factory = new ConnectionFactory() { HostName = "rabbitmq" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
